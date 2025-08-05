@@ -1,0 +1,47 @@
+1. What is Jenkins, and how is it used in CI/CD?
+Jenkins is an open-source automation server used to automate the building, testing, and deployment of applications. It plays a key role in CI/CD pipelines (Continuous Integration and Continuous Delivery/Deployment).
+
+In CI/CD, Jenkins is used to:
+	Continuously pull code from version control systems like Git
+	Build the code using tools like Maven or Gradle
+	Run automated tests (unit, integration, etc.)
+	Package and deploy applications to staging or production environments (e.g., servers, containers, or cloud)
+	Monitor and visualize pipelines with plugins and dashboards
+
+
+2. What is a Jenkinsfile?
+A Jenkinsfile is a script that defines the steps of a Jenkins pipeline.
+It contains all the instructions Jenkins should follow to build, test, and deploy your project — written in Groovy syntax.
+
+3. How do you create and configure Jenkins pipelines?
+You can create a pipeline in two ways:
+Using Jenkins UI:
+	Go to Jenkins Dashboard → New Item → Pipeline
+	Add steps manually or link to a Jenkinsfile from Git
+
+Using a Jenkinsfile:
+	Write a Jenkinsfile in your project repo
+	Jenkins reads it and runs the pipeline automatically
+
+4. What are some common stages in a Jenkins pipeline?
+Common pipeline stages include
+	Checkout – Pull code from Git
+	Build – Compile or package the code (e.g., mvn package)
+	Test – Run unit or integration tests
+	Docker Build – Create Docker image
+	Scan – Run security scan (like Trivy)
+	Push – Push Docker image to registry
+	Deploy – Deploy to container or server
+
+
+
+5. What is the difference between a declarative and scripted Jenkins pipeline?
+Feature		     Declarative Pipeline			 Scripted Pipeline
+Syntax		     High-level, structured, YAML-like	          Groovy-based, low-level
+Introduced in	     Jenkins 2.x				  Jenkins 1.x
+Ease of Use	     Easier, more readable and beginner-friendly  More flexible but complex
+Structure            Requires pipeline { ... } block	          Uses plain Groovy script (node { ... })
+Error Handling	     Limited custom error handling	          Full access to try/catch/finally
+Validation	     Jenkins validates before running	          No pre-validation; errors appear at runtime
+Parallel Execution   Built-in parallel support	                  Must write manually using Groovy threads
+Use Case	     Recommended for most CI/CD jobs	          Best for complex logic or legacy jobs
