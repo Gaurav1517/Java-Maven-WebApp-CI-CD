@@ -3,7 +3,7 @@ pipeline {
 
     tools {
         maven 'maven'       // Matches Jenkins tool name
-        jdk 'jdk-17'
+        // jdk 'jdk-17'
         dockerTool 'docker'
     }
 
