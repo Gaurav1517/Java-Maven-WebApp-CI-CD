@@ -15,7 +15,7 @@ pipeline {
 
         stage('Git Checkout') {
             steps {
-                git branch: 'main', url: 'https://github.com/Gaurav1517/java-maven-webapp.git'
+                git branch: 'main', url: 'https://github.com/Gaurav1517/Java-Maven-WebApp-CI-CD.git'
             }
         }
 
