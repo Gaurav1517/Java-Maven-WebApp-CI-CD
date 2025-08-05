@@ -82,8 +82,7 @@ pipeline {
             steps {
                 script { 
                     echo " Cleaning up Docker images matching gchauhan1517 or java-maven"
-                    sh 'sh "docker image prune -af'
-                    // sh 'docker images --format "{{.Repository}}:{{.Tag}}" | grep -E "^(gchauhan1517|java-maven)" | xargs -r docker rmi -f'
+                    sh 'docker image prune -af --force'
                 }
             }
         }
